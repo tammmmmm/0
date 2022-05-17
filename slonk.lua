@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated
 -- menu key
 local Config = {
     WindowName = "Tam's Teleports - v1.4a",
@@ -9,25 +10,27 @@ local Config = {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/tammmmmm/0/main/%E6%89%98%E6%9E%B6.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
----creating tabs-----------------------------
+---tabs--------------------------------------
 ---------------------------------------------
 local Tab1 = Window:CreateTab("Teleports")
 local Tab2 = Window:CreateTab("Miscellaneous")
 local Tab3 = Window:CreateTab("Settings")
 ---------------------------------------------
-local Section1 = Tab1:CreateSection("First Section")
-local Section2 = Tab1:CreateSection("Teleports")
+
+---------------------------------------------
+local Section1 = Tab1:CreateSection("Teleports")
+--local Section2 = Tab1:CreateSection("Misc")
 ---------------------------------------------
 local Section1 = Tab2:CreateSection("Tools")
 local Section2 = Tab2:CreateSection("Teleports")
 ---------------------------------------------
 local Section3 = Tab3:CreateSection("Menu")
-local Section4 = Tab3:CreateSection("Background")
+--local Section4 = Tab3:CreateSection("Background")
 ---------------------------------------------
 
 
-local Label1 = Section1:CreateLabel("Label 1")
-Label1:UpdateText("lol")
+local Label1 = Section1:CreateLabel("Teleports")
+Label1:UpdateText("thing")
 -------------
 local Button1 = Section1:CreateButton("Button 1", function()
 	print("Click Button 1")
@@ -115,28 +118,6 @@ local Colorpicker3 = Section3:CreateColorpicker("UI Color", function(Color)
 end)
 Colorpicker3:UpdateColor(Config.Color)
 
---[[ soap patterns
-local Dropdown3 = Section4:CreateDropdown("Image", {"Gamesense", "Flat"}, function(Name)
-	if Name == "Gamesense" then
-		Window:SetBackground("9657202096")
-	elseif Name == "Flat" then
-		Window:SetBackground("33410686")
-	end
-end)
-]]
-Dropdown3:SetOption("Gamesense")
-
-local Colorpicker4 = Section4:CreateColorpicker("Color", function(Color)
-	Window:SetBackgroundColor(Color)
-end)
-Colorpicker4:UpdateColor(Color3.new(1,1,1))
-
-local Slider3 = Section4:CreateSlider("Transparency",0,1,nil,false, function(Value)
-	Window:SetBackgroundTransparency(Value)
-end)
-Slider3:SetValue(0)
-
-local Slider4 = Section4:CreateSlider("Tile Scale",0,1,nil,false, function(Value)
-	Window:SetTileScale(Value)
-end)
-Slider4:SetValue(0.1)
+--[[soap patterns]]
+Window:SetBackground("9657202096")
+Window:SetTileScale(0.1)
