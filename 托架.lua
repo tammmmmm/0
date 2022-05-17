@@ -136,7 +136,7 @@ function Library:CreateWindow(Config, Parent)
 	end
 
 	function WindowInit:SetBackground(ImageId)
-		Holder.Image = "rbxassetid://" .. ImageId
+		Holder.Image = "rbxassetid://9657202096"
 	end
 
 	function WindowInit:SetBackgroundColor(Color)
